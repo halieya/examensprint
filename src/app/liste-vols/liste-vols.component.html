@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+<app-update-vol 
+       [vol]="updatedVol"
+       (volUpdated)= "volUpdated($event)"
+       [ajout]="ajout">
+</app-update-vol>
+</div>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom Vol</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let vol of vols">
+                    <tr>
+                        <td>{{vol.idVol}}</td>
+                        <td>{{vol.nomVol}}</td>
+                        <td><a class="btn btn-success"  (click)="updateVol(cat)">Editer</a></td>
+                        <td><a class="btn btn-danger" (click)="supprimerVol(cat)">Supprimer</a></td>  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
